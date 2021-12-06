@@ -33,12 +33,44 @@
 
 // 1 Criando um irmão para o elementoOndeVoceEsta;
 
-let pai = document.createElement('pai');
+let pai = document.getElementById('pai');
 let irmaoElementoOndeVoceEsta = document.createElement('section');
 irmaoElementoOndeVoceEsta.id = 'irmaoElementoOndeVoceEsta';
 pai.appendChild(irmaoElementoOndeVoceEsta);
+console.log(irmaoElementoOndeVoceEsta)
 
-let elementoOndeVoceEsta = document.createElement('elementoOndeVoceEsta');
+// 2 Criando um filho para elementoOndeVoceEsta
+
+let elementoOndeVoceEsta = document.getElementById('elementoOndeVoceEsta');
 let filhoElementoOndeVoceEsta = document.createElement('section');
 filhoElementoOndeVoceEsta.id = 'filhoElementoOndeVoceEsta';
 elementoOndeVoceEsta.appendChild(filhoElementoOndeVoceEsta)
+console.log(filhoElementoOndeVoceEsta)
+
+// 3 Criando um filho para primeiroFilhoDoFilho
+
+let primeiroFilhoDoFilho = document.getElementById('primeiroFilhoDoFilho');
+let filhoPrimeiroFilhoDoFilho = document.createElement('section');
+filhoPrimeiroFilhoDoFilho.id = 'filhoPrimeiroFilhoDoFilho';
+primeiroFilhoDoFilho.appendChild(filhoPrimeiroFilhoDoFilho);
+console.log(filhoPrimeiroFilhoDoFilho)
+
+// 4 Acessando a partir do filhoPrimeiroFilhoDoFilho o terceiroFilho
+let terceiroFilho = filhoPrimeiroFilhoDoFilho.parentElement.parentElement.nextElementSibling;
+console.log(terceiroFilho);
+
+// PART III
+
+// Remova todos os elementos filhos do paiDoPai, exceto pai, elementoOndeVoceEsta e primeiroFilhoDoFilho
+
+const pai = document.getElementById('pai');
+
+    for (let index = pai.childNodes.length - 1; index >= 0; index -= 1) {
+      const currentChildren = pai.childNodes[index];
+      if (currentChildren.id !== 'elementoOndeVoceEsta') {
+        currentChildren.remove();
+      }
+    }
+
+    const segundoEUltimoFilhoDoFilho = document.getElementById('segundoEUltimoFilhoDoFilho');
+    segundoEUltimoFilhoDoFilho.remove();
