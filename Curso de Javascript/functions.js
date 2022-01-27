@@ -22,10 +22,12 @@ console.log(corSite1) // imprimindo resultado
 
 let corSite2 = "branco";
 
-function mudaCor2(cores, tonalidades){
-    mudaCor2 = cores + ' ' + tonalidades;
+function mudaCor2(cores, tonalidades){ // dois parametros
+    corSite2 = cores + ' ' + tonalidades; // valor do corSite2
 }
 
-console.log(corSite2);
-mudaCor2("verde", "claro")
-console.log(mudaCor2)
+mudaCor2("verde", "claro") // valor
+console.log(corSite2) // imprimindo
+
+
+
